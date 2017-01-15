@@ -10,6 +10,7 @@ if (config.stage == "development") {
   dbname = config.postgres.development.database;
 }
 
+// Uses heroku - should be modified for local database
 var sequelize = new Sequelize(process.env.DATABASE_URL, {
   host: uri,
   dialect: 'postgres',

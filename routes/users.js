@@ -26,7 +26,7 @@ router.post('/', function(req, res, next) {
   //check for parameters
   model.users.check(req).then(function(valid) {
     if (valid.success) {
-      // check for https, otherwise redirect
+      // check for https, otherwise redirect (loops on heroku)
       if (true) {
         model.users.insert(req).then(function(result){
           // There was a problem with inserting the user
