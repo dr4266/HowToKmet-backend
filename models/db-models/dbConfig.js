@@ -10,7 +10,7 @@ if (config.stage == "development") {
   dbname = config.postgres.development.database;
 }
 
-var sequelize = new Sequelize(process.env.DATABASE_URL {
+var sequelize = new Sequelize(process.env.DATABASE_URL, {
   host: uri,
   dialect: 'postgres',
   pool: {
