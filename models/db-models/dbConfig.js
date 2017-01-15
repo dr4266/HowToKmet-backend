@@ -23,6 +23,7 @@ var sequelize = new Sequelize(dbname, username, password, {
     min: 0,
     idle: 10000
   },
+  protocol: null,
 });
 
 var Kek = sequelize.define('kek', {
