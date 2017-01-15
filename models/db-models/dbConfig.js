@@ -10,8 +10,8 @@ if (config.stage == "development") {
 } else {
   uri = config.postgres.production.uri;
   dbname = config.postgres.production.database;
-  username = config.authentication.heroku-postgres.username;
-  password = config.authentication.heroku-postgres.username;
+  username = config.authentication.herokupostgres.username;
+  password = config.authentication.herokupostgres.username;
 }
 
 var sequelize = new Sequelize(dbname, username, password, {

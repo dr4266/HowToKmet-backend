@@ -23,7 +23,7 @@
           "username": "postgres",
           "password": "Vroc+Toaster29"
         },
-        "heroku-postgres": {
+        "herokupostgres": {
           "password": "d6726709467c6ea8d67497ed5d830d4eaab01d86f40ac0e1d9f5be6c4e5d3cc7",
           "username": "ecrywbiwkurtqr"
         },
