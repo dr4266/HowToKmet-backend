@@ -8,13 +8,6 @@
             },
             "database": "kmet"
         },
-        "production":{
-            "server": {
-              "uri": "ec2-184-72-249-88.compute-1.amazonaws.com",
-              "port": "5432"
-              },
-            "database": "d86hcb6e6n6q1s"
-        },
         "usersTable": "users",
         "keksTable": "keks"
     },
@@ -22,10 +15,6 @@
         "postgres": {
           "username": "postgres",
           "password": "Vroc+Toaster29"
-        },
-        "herokupostgres": {
-          "password": "d6726709467c6ea8d67497ed5d830d4eaab01d86f40ac0e1d9f5be6c4e5d3cc7",
-          "username": "ecrywbiwkurtqr"
         },
         "superSecret": "NajrajsNaSvetuImam..."
     },

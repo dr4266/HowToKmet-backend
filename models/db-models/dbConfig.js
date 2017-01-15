@@ -8,14 +8,9 @@ console.log(process.env.DATABASE_URL);
 if (config.stage == "development") {
   uri = config.postgres.development.server.uri;
   dbname = config.postgres.development.database;
-} else {
-  uri = config.postgres.production.uri;
-  dbname = config.postgres.production.database;
-  username = config.authentication.herokupostgres.username;
-  password = config.authentication.herokupostgres.username;
 }
 
-var sequelize = new Sequelize(dbname, username, password, {
+var sequelize = new Sequelize(process.env.DATABASE_URL {
   host: uri,
   dialect: 'postgres',
   pool: {
