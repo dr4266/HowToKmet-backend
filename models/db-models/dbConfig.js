@@ -7,6 +7,11 @@ var uri, dbname;
 if (config.stage == "development") {
   uri = config.postgres.development.server.uri;
   dbname = config.postgres.development.database;
+} else {
+  uri = config.postgres.poduction.uri;
+  dbname = config.postgres.production.database;
+  username = config.authentication.heroku-postgres.username;
+  password = config.authentication.heroku-postgres.username;
 }
 
 var sequelize = new Sequelize(dbname, username, password, {

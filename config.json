@@ -1,5 +1,5 @@
 {
-    "stage": "development",
+    "stage": "production",
     "postgres": {
         "development":{
             "server":  {
@@ -10,10 +10,10 @@
         },
         "production":{
             "server": {
-              "uri": "127.0.0.1",
+              "uri": "postgres://ecrywbiwkurtqr:d6726709467c6ea8d67497ed5d830d4eaab01d86f40ac0e1d9f5be6c4e5d3cc7@ec2-184-72-249-88.compute-1.amazonaws.com:5432/d86hcb6e6n6q1s",
               "port": "5432"
               },
-            "database": "kmet"
+            "database": "d86hcb6e6n6q1s"
         },
         "usersTable": "users",
         "keksTable": "keks"
@@ -22,6 +22,10 @@
         "postgres": {
           "username": "postgres",
           "password": "Vroc+Toaster29"
+        },
+        "heroku-postgres": {
+          "password": "d6726709467c6ea8d67497ed5d830d4eaab01d86f40ac0e1d9f5be6c4e5d3cc7",
+          "username": "ecrywbiwkurtqr"
         },
         "superSecret": "NajrajsNaSvetuImam..."
     },
