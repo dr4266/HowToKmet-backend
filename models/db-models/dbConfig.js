@@ -4,23 +4,39 @@ var Sequelize = require("sequelize");
 var username = config.authentication.postgres.username;
 var password = config.authentication.postgres.password;
 var uri, dbname;
-console.log(process.env.DATABASE_URL);
+
 if (config.stage == "development") {
   uri = config.postgres.development.server.uri;
   dbname = config.postgres.development.database;
 }
 
-// Uses heroku - should be modified for local database
-var sequelize = new Sequelize(process.env.DATABASE_URL, {
-  host: uri,
-  dialect: 'postgres',
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  },
-  protocol: 'postgres',
-});
+var sequelize;
+
+// Uses heroku database
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    host: uri,
+    dialect: 'postgres',
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    },
+    protocol: 'postgres',
+  });
+// database is localhost
+} else {
+  sequelize = new Sequelize(dbname, username, password, {
+    host: uri,
+    dialect: 'postgres',
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    },
+    protocol: 'postgres',
+  });
+}
 
 var Kek = sequelize.define('kek', {
   id: {
