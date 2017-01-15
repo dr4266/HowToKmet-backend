@@ -13,7 +13,7 @@ if (config.stage == "development") {
   username = config.authentication.herokupostgres.username;
   password = config.authentication.herokupostgres.username;
 }
-
+console.log("uri = " + uri);
 var sequelize = new Sequelize(dbname, username, password, {
   host: uri,
   dialect: 'postgres',
