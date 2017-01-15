@@ -1,0 +1,35 @@
+{
+    "stage": "development",
+    "postgres": {
+        "development":{
+            "server":  {
+              "uri": "127.0.0.1",
+              "port": "5432"
+            },
+            "database": "kmet"
+        },
+        "production":{
+            "server": {
+              "uri": "127.0.0.1",
+              "port": "5432"
+              },
+            "database": "kmet"
+        },
+        "usersTable": "users",
+        "keksTable": "keks"
+    },
+    "authentication": {
+        "postgres": {
+          "username": "postgres",
+          "password": "Vroc+Toaster29"
+        },
+        "superSecret": "NajrajsNaSvetuImam..."
+    },
+    "api": {
+      "server": {
+        "uri": "127.0.0.1",
+        "port" : "8080",
+        "securePort": "8443"
+      }
+    }
+}
