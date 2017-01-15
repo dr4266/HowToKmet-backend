@@ -4,7 +4,7 @@ var Sequelize = require("sequelize");
 var username = config.authentication.postgres.username;
 var password = config.authentication.postgres.password;
 var uri, dbname;
-console.log("CONFIGURINF SEQUELIZE");
+console.log(process.env.DATABASE_URL);
 if (config.stage == "development") {
   uri = config.postgres.development.server.uri;
   dbname = config.postgres.development.database;
@@ -23,7 +23,7 @@ var sequelize = new Sequelize(dbname, username, password, {
     min: 0,
     idle: 10000
   },
-  protocol: null,
+  protocol: 'postgres',
 });
 
 var Kek = sequelize.define('kek', {
