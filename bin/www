@@ -32,16 +32,19 @@ app.set('securePort', configSecurePort);
 /**
 * Import the key and self signed certificate for HTTPS
 */
-const credentials = {
+const options = {
   key: fs.readFileSync('./auth/server.key'),
-  cert: fs.readFileSync('./auth/server.crt')
+  cert: fs.readFileSync('./auth/server.crt'),
+  spdy: {protocols: [ 'h2','spdy/3.1', 'spdy/3', 'spdy/2','http/1.1', 'http/1.0' ],
+      plain: false
+  }
 }
 
 /**
  * Create HTTP and HTTPS server.
  */
 
-var server = spdy.createServer(credentials, app);
+var server = spdy.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
