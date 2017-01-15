@@ -8,7 +8,7 @@ if (config.stage == "development") {
   uri = config.postgres.development.server.uri;
   dbname = config.postgres.development.database;
 } else {
-  uri = config.postgres.poduction.uri;
+  uri = config.postgres.production.uri;
   dbname = config.postgres.production.database;
   username = config.authentication.heroku-postgres.username;
   password = config.authentication.heroku-postgres.username;
