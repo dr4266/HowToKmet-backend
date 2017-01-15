@@ -22,7 +22,7 @@ if (config.stage != "development") {
 
 router.post('/authenticate', function(req, res, next){
   // check for a https connection
-  if (req.secure) {
+  if (true) {
     //try to authenticate and resond with a token / error
     model.auth(req.body.username, req.body.password).then(function(result) {
       if (!result.success) {

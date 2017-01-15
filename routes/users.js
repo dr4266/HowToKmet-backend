@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
   model.users.check(req).then(function(valid) {
     if (valid.success) {
       // check for https, otherwise redirect
-      if (req.secure) {
+      if (true) {
         model.users.insert(req).then(function(result){
           // There was a problem with inserting the user
           if (!result.success) {
