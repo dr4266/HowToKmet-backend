@@ -9,6 +9,16 @@ model.users.insert = require('../models/users/insertUser');
 model.users.delete = require('../models/users/deleteUser');
 model.users.check = require('../models/authenticate/checkUserParams');
 
+var uri = config.api.server.uri;
+var securePort = config.api.server.securePort;
+var port = config.api.server.port;
+
+if (config.stage != "development") {
+  uri = config.api.herokuserver.uri;
+  port = config.api.herokuserver.port;
+  securePort = config.api.herokuserver.securePort;
+}
+
 /**
 * REGISTER user
 */
@@ -27,8 +37,8 @@ router.post('/', function(req, res, next) {
           }
         });
       } else {
-        res.redirect(307, 'https://' + config.api.server.uri + ":" +
-          config.api.server.securePort + "/api/users");
+        res.redirect(307, 'https://' + uri + ":" +
+          securePort + "/api/users");
       }
     } else {
       // parameters not valid

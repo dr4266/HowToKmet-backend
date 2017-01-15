@@ -23,6 +23,11 @@
         "uri": "127.0.0.1",
         "port" : "8080",
         "securePort": "8443"
+      },
+      "herokuserver": {
+        "uri": "radiant-ravine-57678.herokuapp.com",
+        "port": "443",
+        "securePort": "443"
       }
     }
 }

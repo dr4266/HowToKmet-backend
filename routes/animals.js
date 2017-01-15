@@ -19,6 +19,12 @@ var uri = config.api.server.uri;
 var port = config.api.server.port;
 var securePort = config.api.server.securePort;
 
+if (config.stage != "development") {
+  uri = config.api.herokuserver.uri;
+  port = config.api.herokuserver.port;
+  securePort = config.api.herokuserver.securePort;
+}
+
 // A token should be present (not all methods check for it)
 router.use(function(req, res, next) {
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
