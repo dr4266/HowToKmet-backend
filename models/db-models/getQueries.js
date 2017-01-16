@@ -15,7 +15,7 @@ module.exports = {
   },
   getUserByUserNameAndPass: function(_username, _password) {
     return new Promise(function(callback) {
-      dbConfig.sequelize.query('SELECT * FROM public."users" AS u WHERE u.username = ? AND u.password = crypt(?, u.password) LIMIT 1 ',
+      dbConfig.sequelize.query('SELECT * FROM public."users" AS u WHERE u."kmetUsername" = ? AND u."kmetPassword" = crypt(?, u."kmetPassword") LIMIT 1 ',
       { replacements: [_username, _password], type: dbConfig.sequelize.QueryTypes.SELECT }).then(function(result) {
         callback(result);
       });
