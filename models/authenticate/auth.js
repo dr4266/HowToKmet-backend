@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 module.exports = function(username, password) {
   return new Promise(function(callback) {
     db.getUserByUserNameAndPass(username, password).then(function(result) {
-      if (result != null) {
+      if (result != null && typeof result !== 'undefined' && result.length > 0) {
         var token = jwt.sign(result.dataValues, config.authentication.superSecret, {
           expiresIn: 3600 // expires in 60 minutes
         });

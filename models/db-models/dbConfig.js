@@ -15,7 +15,6 @@ var sequelize;
 // Uses heroku database
 if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, {
-    host: uri,
     dialect: 'postgres',
     pool: {
       max: 5,
