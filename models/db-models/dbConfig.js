@@ -25,7 +25,7 @@ if (process.env.DATABASE_URL) {
   });
 // database is localhost
 } else {
-  sequelize = new Sequelize(dbname, username, password, {
+  sequelize = new Sequelize("kmet", username, password, {
     host: uri,
     dialect: 'postgres',
     pool: {
