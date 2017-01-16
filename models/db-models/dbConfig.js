@@ -76,9 +76,9 @@ var User = sequelize.define('user', {
     allowNull: false
   },
   id: {
-    type: DataTypes.UUID,
+    type: Sequelize.UUID,
     primaryKey: true,
-    defaultValue: DataTypes.UUIDV4
+    defaultValue: Sequelize.UUIDV4
   },
   password: {
     type: Sequelize.STRING,
@@ -117,7 +117,7 @@ var Task = sequelize.define('task', {
     field: "taskDescription"
   },
   userId: {
-    type: DataTypes.UUID,
+    type: Sequelize.UUID,
     references: {
       model: User,
       key: "id"
@@ -151,7 +151,7 @@ var Animal = sequelize.define('animal', {
     field: "animalDescription"
   },
   userId: {
-    type: DataTypes.UUID,
+    type: Sequelize.UUID,
     references: {
       model: User,
       key: "id"
@@ -180,7 +180,7 @@ var Property = sequelize.define('property', {
     field: "propertyDescription"
   },
   userId: {
-    type: DataTypes.UUID,
+    type: Sequelize.UUID,
     references: {
       model: User,
       key: "id"
